@@ -1,6 +1,6 @@
 {
   "name": "pi-pins",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GPIO (with interrupts) for embedded Linux machines like Raspberry Pi and BeagleBone",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/natevw/pi-pins/issues"
   },
-  "homepage": "https://github.com/natevw/pi-pins"
+  "homepage": "https://github.com/natevw/pi-pins",
+  "dependencies": {
+    "epoll": "^0.1.3"
+  }
 }
