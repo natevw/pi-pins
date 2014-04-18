@@ -1,0 +1,23 @@
+{
+  "name": "pi-pins",
+  "version": "1.0.0",
+  "description": "GPIO (with interrupts) for embedded Linux machines like Raspberry Pi and BeagleBone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natevw/pi-pins.git"
+  },
+  "keywords": [
+    "gpio",
+    "raspi"
+  ],
+  "author": "Nathan Vander Wilt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natevw/pi-pins/issues"
+  },
+  "homepage": "https://github.com/natevw/pi-pins"
+}
