@@ -1,6 +1,6 @@
 {
   "name": "pi-pins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GPIO (with interrupts) for embedded Linux machines like Raspberry Pi and BeagleBone",
   "main": "index.js",
   "scripts": {
