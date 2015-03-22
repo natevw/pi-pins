@@ -19,14 +19,23 @@ exports.connect = function (pin) {        // TODO: sync up compat, split out
     pin = +pin;
     
     var fd,     // faster value access
-        pinPath = "/sys/class/gpio/gpio"+pin;
+        pinPath = "/sys/class/gpio/gpio"+pin,
+        tries = 0;
     try {
         fd = fs.openSync(pinPath+"/value",'r+');
     } catch (e) {
         if (e.code === 'ENOENT') {
             // pin hasn't been exported, request and open again
             fs.writeFileSync("/sys/class/gpio/export", ''+pin);
-            fd = fs.openSync(pinPath+"/value",'r+');
+
+            for (tries = 0; tries < 255; tries++) {
+                try {
+                    fd = fs.openSync(pinPath+"/value",'r+');
+                    break;
+                } catch (e) {
+                    if (e.code !== 'EACCES' || tries === 255) throw e
+                }
+            }
         } else throw e;
     }
     
